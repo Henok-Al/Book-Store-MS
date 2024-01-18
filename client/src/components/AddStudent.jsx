@@ -1,13 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
   const [roll, setRoll] = useState("");
   const [username, setUsername] = useState("");
   const [grade, setGrade] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,9 +19,9 @@ const AddStudent = () => {
         grade,
       })
       .then((res) => {
-        if (res.data.registered) {
-          navigate("/dashboard");
-        }
+        // if (res.data.registered) {
+        //   navigate("/dashboard");
+        // }
         console.log(res);
       })
       .catch((err) => console.log(err));
