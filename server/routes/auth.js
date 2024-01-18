@@ -1,7 +1,7 @@
 import express from 'express'
 import { Admin } from '../models/Admin.js';
 import { Student } from '../models/Student.js';
-import jwt from 'jsonwebtoken';
+import jwt, { decode } from 'jsonwebtoken';
 import bcrypt from 'bcrypt'
 const router = express.Router();
 
@@ -42,6 +42,25 @@ router.post('/login', async (req, res) => {
     }
 })
 
-export {router as AdminRouter}
+
+const verifyAdmin = (req, res, next) => {
+    const token = req.cookies.token;
+    if(!token) {
+        res.json({message: "Invalid Admin"})
+    }else {
+        jwt.verify(token, process.env.Admin_key, (err, decoded) => {
+            if(err){
+                return res.json({message: "Invalid token"})
+            }else {
+                req.username = decoded.username;
+                req.role = decoded.role;
+                next()
+            }
+        })
+    }
+}
+
+
+export {router as AdminRouter,verifyAdmin }
 
 
