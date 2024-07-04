@@ -5,6 +5,6 @@ const bookSchema = new mongoose.Schema({
     author: {type: String, required: true},
     imageUrl: {type: String, required: true},
 })
-
+//export
 const bookModel = mongoose.model('Book', bookSchema)
 export {bookModel as Book}
