@@ -8,7 +8,7 @@ const Books = ({ role }) => {
   //fetch books
   useEffect(() => {
     axios
-      .get("https://book-store-ms-nbld.onrender.com/book/books")
+      .get("http://localhost:3001/book/books")
       .then((res) => {
         setBooks(res.data);
         console.log(res.data);
