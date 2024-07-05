@@ -19,7 +19,11 @@ function App() {
   axios.defaults.withCredentials = true;
   useEffect(() => {
     axios
+<<<<<<< HEAD
       .get("BASE_URL/auth/verify")
+=======
+      .get("https://book-store-ms-nbld.onrender.com/auth/verify")
+>>>>>>> 59b40dede993443dc8537412e4d0e47e19c5b2d1
       .then((res) => {
         if (res.data.login) {
           setRole(res.data.role);
