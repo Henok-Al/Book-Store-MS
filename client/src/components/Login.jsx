@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Login.css";
 import axios from "axios";
+// eslint-disable-next-line react/prop-types
 const Login = ({ setRoleVar }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
