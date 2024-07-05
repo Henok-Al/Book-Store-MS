@@ -9,12 +9,14 @@ import { bookRouter } from "./routes/book.js";
 import { Book } from "./models/Book.js";
 import { Student } from "./models/Student.js";
 import { Admin } from "./models/Admin.js";
+// Load environment variables
+dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: [`${process.env.CLIENT_URL}`],
+    origin: process.env.CLIENT_URL,
     credentials: true,
   })
 );
