@@ -19,6 +19,11 @@ app.use(
   })
 );
 
+app.get("/", async (req, res) => {
+  const books = await Book.find({});
+  return res.json(books);
+});
+
 app.use(cookieParser());
 dotenv.config();
 app.use("/auth", AdminRouter);
