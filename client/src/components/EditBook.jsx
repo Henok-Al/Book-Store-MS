@@ -11,7 +11,7 @@ const EditiBook = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/book/book/" + id)
+      .get("BASE_URL/book/book/" + id)
       .then((res) => {
         setName(res.data.name);
         setAuthor(res.data.author);
@@ -23,7 +23,7 @@ const EditiBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3001/book/book/" + id, {
+      .put("BASE_URL/book/book/" + id, {
         name,
         author,
         imageUrl,

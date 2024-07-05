@@ -8,7 +8,7 @@ const Books = ({ role }) => {
   //fetch books
   useEffect(() => {
     axios
-      .get("http://localhost:3001/book/books")
+      .get("BASE_URL/book/books")
       .then((res) => {
         setBooks(res.data);
         console.log(res.data);

@@ -6,7 +6,7 @@ const Logout = ({ setRole }) => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/logout")
+      .get("BASE_URL/auth/logout")
       .then((res) => {
         if (res.data.logout) {
           setRole("");

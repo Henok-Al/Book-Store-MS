@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/dashboard")
+      .get("BASE_URL/dashboard")
       .then((res) => {
         if (res.data.ok) {
           setStudents(res.data.student);

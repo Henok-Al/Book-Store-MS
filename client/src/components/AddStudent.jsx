@@ -12,7 +12,7 @@ const AddStudent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/student/register", {
+      .post("BASE_URL/student/register", {
         roll,
         username,
         password,
