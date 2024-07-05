@@ -5,6 +5,7 @@ import "../css/Book.css";
 
 const Books = ({ role }) => {
   const [books, setBooks] = useState([]);
+  //fetch books
   useEffect(() => {
     axios
       .get("http://localhost:3001/book/books")
