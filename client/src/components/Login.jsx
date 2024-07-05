@@ -12,7 +12,7 @@ const Login = ({ setRoleVar }) => {
   axios.defaults.withCredentials = true;
   const handleSubmit = () => {
     axios
-      .post(`${import.meta.env.BASE_URL}/auth/login`, {
+      .post(`${import.meta.env.VITE_BASE_URL}/auth/login`, {
         username,
         password,
         role,

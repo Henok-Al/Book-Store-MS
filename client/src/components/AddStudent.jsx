@@ -12,7 +12,7 @@ const AddStudent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${import.meta.env.BASE_URL}/student/register`, {
+      .post(`${import.meta.env.VITE_BASE_URL}/student/register`, {
         roll,
         username,
         password,

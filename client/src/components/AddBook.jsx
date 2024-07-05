@@ -11,7 +11,7 @@ const AddBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${import.meta.env.BASE_URL}/book/add`, {
+      .post(`${import.meta.env.VITE_BASE_URL}/book/add`, {
         name,
         author,
         imageUrl,

@@ -11,7 +11,7 @@ const EditiBook = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.BASE_URL}/book/book/` + id)
+      .get(`${import.meta.env.VITE_BASE_URL}/book/book/` + id)
       .then((res) => {
         setName(res.data.name);
         setAuthor(res.data.author);
@@ -23,7 +23,7 @@ const EditiBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`${import.meta.env.BASE_URL}/book/book/` + id, {
+      .put(`${import.meta.env.VITE_BASE_URL}/book/book/` + id, {
         name,
         author,
         imageUrl,
