@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://book-store-ms-client.onrender.com/"],
+    origin: [`CLIENT_URL`],
     credentials: true,
   })
 );
