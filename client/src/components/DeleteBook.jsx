@@ -7,7 +7,7 @@ const DeleteBook = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .delete("BASE_URL/book/book/" + id)
+      .delete(`${import.meta.env.BASE_URL}/book/book/` + id)
       .then((res) => {
         if (res.data.deleted) {
           navigate("/books");

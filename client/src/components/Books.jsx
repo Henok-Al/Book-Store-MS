@@ -8,7 +8,7 @@ const Books = ({ role }) => {
   //fetch books
   useEffect(() => {
     axios
-      .get("BASE_URL/book/books")
+      .get(`${import.meta.env.BASE_URL}/book/books`)
       .then((res) => {
         setBooks(res.data);
         console.log(res.data);

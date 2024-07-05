@@ -11,7 +11,11 @@ const AddBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`BASE_URL/book/add`, { name, author, imageUrl })
+      .post(`${import.meta.env.BASE_URL}/book/add`, {
+        name,
+        author,
+        imageUrl,
+      })
       .then((res) => {
         if (res.data.added) {
           navigate("/books");

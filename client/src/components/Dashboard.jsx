@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("BASE_URL/dashboard")
+      .get(`${import.meta.env.BASE_URL}/dashboard`)
       .then((res) => {
         if (res.data.ok) {
           setStudents(res.data.student);

@@ -12,7 +12,11 @@ const Login = ({ setRoleVar }) => {
   axios.defaults.withCredentials = true;
   const handleSubmit = () => {
     axios
-      .post("BASE_URL/auth/login", { username, password, role })
+      .post(`${import.meta.env.BASE_URL}/auth/login`, {
+        username,
+        password,
+        role,
+      })
       .then((res) => {
         if (res.data.login && res.data.role === "admin") {
           setRoleVar("admin");
